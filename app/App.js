@@ -15,16 +15,19 @@ export default function App() {
 const [region, setRegion] = useState(null);
 const [marker, setMarker] = useState([
   {id:1,localizations: {
-    latitude: -23.5524, longitude: -46.6957
+    latitude: -23.5465, longitude: -46.6907
   }, title: 'Ponto 1' },
   {id:2, localizations: {
-    latitude: -23.5517, longitude: -46.6954 
+    latitude: -23.5468, longitude: -46.6902 
   }, title: 'Ponto 2' },
   {id:3, localizations: {
-    latitude: -23.5523, longitude: -46.6946
+    latitude: -23.5459, longitude: -46.6909
   }, title: 'Ponto 3' },
   {id:4, localizations: {
-    latitude:-23.5533, longitude: -46.6949
+    latitude: -23.5454, longitude: -46.6897
+  }, title: 'Ponto 4' },
+  {id:5, localizations: {
+    latitude:-23.5464, longitude: -46.6903
   }, title: 'Ponto 4' },
 ]);
 
@@ -83,17 +86,17 @@ return (
                   style={{width: 40, height: 40}}
                     key={pontos?.id}
                     coordinate={pontos.localizations}
-                    image={pontos.id == 2 ? require('./image/verde.png'): require('./image/vermelho.png')}
+                    image={pontos.id == 1 ? require('./image/verde.png'): require('./image/vermelho.png')}
                   />
                 )}
  
 
                      <MapViewDirections
                 origin={region}
-                destination={{latitude:-23.5533, longitude: -46.6949}}
+                destination={{latitude:-23.5464, longitude: -46.6903}}
                 apikey={configs.googleApi}
-                strokeWidth={3}
-                strokeColor="hotpink"
+                strokeWidth={4}
+                strokeColor="#00ff00"
               />
               
           </MapView>
